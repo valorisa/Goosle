@@ -1,0 +1,160 @@
+Pour exécuter Goosle comme moteur de recherche, vous devez vous assurer que votre application est correctement configurée pour gérer les requêtes de recherche et afficher les résultats. Voici un guide étape par étape pour configurer et exécuter Goosle comme moteur de recherche :
+
+### 1. Configuration de Goosle
+
+Assurez-vous que votre fichier `config.php` est correctement configuré pour activer la recherche web et les moteurs de recherche que vous souhaitez utiliser. Par exemple :
+
+```php
+return (object) array(
+    'siteurl' => 'http://localhost:8000',
+    'colorscheme' => 'light',
+    'hash' => '$2a$12$dWq58nEumkjDwnKYgQQ.seM/W7RFfrhRf.z4mJJoavwEsK1vNS0qS',
+    'hash_auth' => 'on',
+    'cache_type' => 'file',
+    'cache_time' => 8,
+    'timezone' => 'UTC+2',
+    'enable_web_search' => 'on',
+    'web' => array(
+        'duckduckgo' => 'on', // Activer DuckDuckGo
+        // Ajoutez d'autres moteurs de recherche si nécessaire
+    ),
+);
+```
+
+### 2. Créer un Formulaire de Recherche
+
+Créez un fichier HTML pour le formulaire de recherche. Par exemple, créez un fichier `index.html` dans le répertoire de votre projet :
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goosle Search</title>
+</head>
+<body>
+    <h1>Goosle Search</h1>
+    <form action="search.php" method="get">
+        <input type="text" name="q" placeholder="Enter your search query">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+```
+
+### 3. Créer le Script de Recherche
+
+Créez un fichier PHP pour traiter les requêtes de recherche. Par exemple, créez un fichier `search.php` dans le répertoire de votre projet :
+
+```php
+<?php
+// Charger la configuration
+$config = require 'config.php';
+
+// Récupérer la requête de recherche
+$query = isset($_GET['q']) ? $_GET['q'] : '';
+
+// Vérifier si la requête de recherche est vide
+if (empty($query)) {
+    echo "Please enter a search query.";
+    exit;
+}
+
+// Exemple de recherche avec DuckDuckGo
+$searchUrl = "https://duckduckgo.com/?q=" . urlencode($query);
+
+// Rediriger vers le moteur de recherche
+header("Location: $searchUrl");
+exit;
+?>
+```
+
+### 4. Démarrer le Serveur Web
+
+Démarrez le serveur web local pour servir votre application. Si vous utilisez le serveur PHP intégré, vous pouvez le démarrer avec la commande suivante dans le répertoire de votre projet :
+
+```sh
+php -S localhost:8000
+```
+
+### 5. Accéder à Goosle
+
+Ouvrez votre navigateur et accédez à l'URL suivante pour utiliser Goosle comme moteur de recherche :
+
+```sh
+http://localhost:8000/index.html
+```
+
+### 6. Effectuer une Recherche
+
+Entrez une requête de recherche dans le formulaire et cliquez sur "Search". Vous serez redirigé vers DuckDuckGo avec votre requête de recherche.
+
+### Exemple Complet
+
+Voici un exemple complet des fichiers nécessaires :
+
+#### `config.php`
+
+```php
+return (object) array(
+    'siteurl' => 'http://localhost:8000',
+    'colorscheme' => 'light',
+    'hash' => '$2a$12$dWq58nEumkjDwnKYgQQ.seM/W7RFfrhRf.z4mJJoavwEsK1vNS0qS',
+    'hash_auth' => 'on',
+    'cache_type' => 'file',
+    'cache_time' => 8,
+    'timezone' => 'UTC+2',
+    'enable_web_search' => 'on',
+    'web' => array(
+        'duckduckgo' => 'on',
+    ),
+);
+```
+
+#### `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goosle Search</title>
+</head>
+<body>
+    <h1>Goosle Search</h1>
+    <form action="search.php" method="get">
+        <input type="text" name="q" placeholder="Enter your search query">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+```
+
+#### `search.php`
+
+```php
+<?php
+// Charger la configuration
+$config = require 'config.php';
+
+// Récupérer la requête de recherche
+$query = isset($_GET['q']) ? $_GET['q'] : '';
+
+// Vérifier si la requête de recherche est vide
+if (empty($query)) {
+    echo "Please enter a search query.";
+    exit;
+}
+
+// Exemple de recherche avec DuckDuckGo
+$searchUrl = "https://duckduckgo.com/?q=" . urlencode($query);
+
+// Rediriger vers le moteur de recherche
+header("Location: $searchUrl");
+exit;
+?>
+```
+
+En suivant ces étapes, vous pouvez configurer et exécuter Goosle comme moteur de recherche.
