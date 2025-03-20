@@ -25,7 +25,8 @@ Goosle est un méta-moteur de recherche rapide et orienté confidentialité, con
    git clone https://github.com/valorisa/Goosle.git
    ```
    
-Configurer Goosle :
+2. **Configurer Goosle** :
+
 Copiez le fichier ```config.default.php``` en ```config.php```:
 
 ```bash
