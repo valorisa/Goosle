@@ -70,10 +70,10 @@ Ouvrez votre navigateur à l'adresse http://localhost/ (ou l'URL de votre serveu
 
 ## Utilisation
 
-Recherche Web : Entrez votre requête dans la barre de recherche et appuyez sur Entrée.
-Recherche d'images : Cliquez sur l'onglet "Images" pour effectuer une recherche d'images.
-Recherche d'actualités : Cliquez sur l'onglet "Actualités" pour voir les dernières actualités.
-Recherche de liens magnétiques : Cliquez sur l'onglet "Magnets" pour rechercher des torrents.
+- Recherche Web : Entrez votre requête dans la barre de recherche et appuyez sur Entrée.
+- Recherche d'images : Cliquez sur l'onglet "Images" pour effectuer une recherche d'images.
+- Recherche d'actualités : Cliquez sur l'onglet "Actualités" pour voir les dernières actualités.
+- Recherche de liens magnétiques : Cliquez sur l'onglet "Magnets" pour rechercher des torrents.
 
 **Configuration avancée**
 
