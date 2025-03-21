@@ -29,9 +29,9 @@ Goosle est un méta-moteur de recherche rapide et orienté confidentialité, con
 
 Copiez le fichier ```config.default.php``` en ```config.php```:
 
-```bash
-cp config.default.php config.php
-```
+   ```bash
+   cp config.default.php config.php
+   ```
 
 Modifiez ```config.php``` pour définir vos préférences (moteurs de recherche, clé d'accès, etc.).
 
