@@ -35,7 +35,8 @@ cp config.default.php config.php
 
 Modifiez ```config.php``` pour définir vos préférences (moteurs de recherche, clé d'accès, etc.).
 
-Configurer le serveur web :
+**Configurer le serveur web :**
+
 Pour Nginx, ajoutez un fichier de configuration comme suit :
 
 ```nginx
@@ -61,6 +62,7 @@ server {
 Pour Apache, assurez-vous que le module ```mod_rewrite``` est activé et renommez ```goosle.htaccess``` en ```.htaccess```.
 
 Configurer PHP-FPM :
+
 Assurez-vous que PHP-FPM est installé et configuré pour écouter sur 127.0.0.1:9000.
 
 Accéder à Goosle :
@@ -133,7 +135,8 @@ Pousser vos modifications :
 ```bash
 git push origin votre-branche
 ```
-Ouvrir une Pull Request : Rendez-vous sur GitHub et ouvrez une PR pour proposer vos modifications.
+Ouvrir une Pull Request : 
+Rendez-vous sur GitHub et ouvrez une PR pour proposer vos modifications.
 
 ## Licence
 
@@ -141,9 +144,9 @@ Goosle est distribué sous licence GPL-3.0. Vous êtes libre de l'utiliser, de l
 
 ## Auteur
 
-Arnan de Gans : Créateur original de Goosle.
-valorisa : Mainteneur du fork.
-Remerciements
+**Arnan de Gans** : Créateur original de Goosle.
+**valorisa** : Mainteneur du fork.
+Remerciements...
 
 Merci à tous les contributeurs qui ont aidé à améliorer Goosle.
 Merci aux moteurs de recherche et API utilisés pour fournir des résultats de qualité.
