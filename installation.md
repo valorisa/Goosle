@@ -93,6 +93,7 @@ Goosle prend en charge deux types de cache :
 APCu : Pour une mise en cache en mémoire (recommandé si disponible).
 
 Fichier : Pour une mise en cache sur le disque.
+
 Configurez le cache dans config.php :
 
 ```php
