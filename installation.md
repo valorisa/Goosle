@@ -146,6 +146,7 @@ Goosle est distribué sous licence GPL-3.0. Vous êtes libre de l'utiliser, de l
 ## Auteur
 
 **Arnan de Gans** : Créateur original de Goosle.
+
 **valorisa** : Mainteneur du fork.
 Remerciements...
 
